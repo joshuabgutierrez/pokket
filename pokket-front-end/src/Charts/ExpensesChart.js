@@ -9,8 +9,9 @@ const state = {
 			label: 'Expenses',
 			fill: false,
 			lineTension: 0.5,
-			borderColor: 'red',
-			pointBackgroundColor: 'red',
+			borderColor: 'edeef1',
+			pointRadius: 4,
+			pointBackgroundColor: '#e51e2b',
 			pointBorderColor: '#fff',
 			borderWidth: 4,
 			data: [ 100, 200, 250, 150, 800, 220, 190 ]
@@ -19,12 +20,9 @@ const state = {
 };
 
 const ExpensesChartContainer = styled.div`
-	/* background-color: #4357ad; */
-	border: 1px solid #000;
-	max-width: 370px;
 	border-radius: 10px;
-	margin-top: 1em;
-	background-color: #4357ad;
+	background-color: #007ee3;
+	padding: 1em 0;
 `;
 
 export default function ExpensesChart() {
@@ -41,6 +39,7 @@ export default function ExpensesChart() {
 						fontStyle: 'normal',
 						fontFamily: 'Roboto'
 					},
+					responsive: true,
 					legend: {
 						display: false
 					},

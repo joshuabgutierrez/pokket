@@ -5,11 +5,11 @@ import Category from './Category';
 import styled from 'styled-components';
 
 const CategoriesContainer = styled.div`
-	background-color: #4357ad;
+	background-color: #007ee3;
 	color: #fff;
 	padding: 1em 2em;
-	max-width: 370px;
 	border-radius: 10px;
+	max-width: 100%;
 `;
 
 const CategoriesHeader = styled.header`

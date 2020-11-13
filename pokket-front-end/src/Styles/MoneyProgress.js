@@ -8,7 +8,7 @@ const CircularProgressStyles = {
 		maxWidth: '100px'
 	},
 	path: {
-		stroke: '#496DDB',
+		stroke: '#FFFFFF',
 		transition: 'all 0.5s ease 0s'
 	},
 	trail: {

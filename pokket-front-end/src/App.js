@@ -1,16 +1,18 @@
-import './App.css';
-import Dashboard from './Pages/Dashboard';
+import Home from './Pages/Home';
 import { CssBaseline, ThemeProvider as MuiThemeProvider } from '@material-ui/core';
 import theme from './Styles/Theme';
 import { ThemeProvider } from 'styled-components';
+import { TabPanelValueContextProvider } from './Contexts/TabPanelValueContext';
 
 function App() {
 	return (
-		<div className="App">
+		<div>
 			<MuiThemeProvider theme={theme}>
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
-					<Dashboard />
+					<TabPanelValueContextProvider>
+						<Home />
+					</TabPanelValueContextProvider>
 				</ThemeProvider>
 			</MuiThemeProvider>
 		</div>

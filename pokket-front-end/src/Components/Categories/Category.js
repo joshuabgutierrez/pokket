@@ -8,7 +8,7 @@ const CategoryContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 1.5em 0;
+	margin: 2.75em 0;
 `;
 
 const CategoryInfo = styled.div`

@@ -4,15 +4,16 @@ import styled from 'styled-components';
 import { BsArrowUp } from 'react-icons/bs';
 
 const FrequencyContainer = styled.div`
-	background-color: #4357ad;
-	max-width: 370px;
+	background-color: #007ee3;
 	border-radius: 10px;
 	color: #fff;
-	padding: 1em 2em;
+	padding: 2.4em 2em;
+	width: 100%;
 
 	& section {
 		display: flex;
 		justify-content: space-between;
+		align-items: center;
 	}
 `;
 

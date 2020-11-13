@@ -5,10 +5,9 @@ import Transaction from './Transaction';
 import styled from 'styled-components';
 
 const TransactionsContainer = styled.div`
-	background-color: #4357ad;
+	background-color: #007ee3;
 	color: #fff;
 	padding: 1em 2em;
-	max-width: 370px;
 	border-radius: 10px;
 `;
 
@@ -26,6 +25,8 @@ function Transactions() {
 				<HiDotsHorizontal size="35" />
 			</TransactionsHeader>
 			<section>
+				<Transaction />
+				<Transaction />
 				<Transaction />
 				<Transaction />
 				<Transaction />

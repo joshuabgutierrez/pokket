@@ -1,26 +1,47 @@
 import { Button, Grid, Typography } from '@material-ui/core';
 import React from 'react';
+import styled from 'styled-components';
+
+const ButtonContainer = styled.div`
+	display: flex;
+	justify-content: flex-end;
+`;
+
+const TabTitle = styled(Typography)`
+	
+	@media (max-width: 960px) {
+		font-size: 1.5rem;
+	}
+	@media (max-width: 500px) {
+		font-size: 1.25rem;
+	}
+	
+`;
 
 function Header() {
 	return (
 		<React.Fragment>
-			<Grid container justify="space-between">
-				<Grid item={5}>
-					<Typography variant="h4" color="secondary" align="left">
+			<Grid container alignItems="center">
+				<Grid item xs={2} sm={3} md={7} lg={8}>
+					<TabTitle variant="h4" color="secondary" align="left">
 						OVERVIEW
-					</Typography>
+					</TabTitle>
 				</Grid>
-				<Grid item={5}>
-					<Grid container spacing={1}>
-						<Grid item md={7}>
-							<Button variant="contained" color="primary">
-								This Week
-							</Button>
+				<Grid item xs={10} sm={9} md={5} lg={4}>
+					<Grid container justify="flex-end">
+						<Grid item xs={8} sm={8} md={7} lg={8}>
+							<ButtonContainer>
+								<Button variant="contained" color="primary">
+									This Week
+								</Button>
+							</ButtonContainer>
 						</Grid>
-						<Grid item md={5}>
-							<Button variant="contained" color="secondary">
-								October
-							</Button>
+						<Grid item xs={4} sm={4} md={5} lg={4}>
+							<ButtonContainer>
+								<Button variant="contained" color="secondary">
+									November
+								</Button>
+							</ButtonContainer>
 						</Grid>
 					</Grid>
 				</Grid>

@@ -7,7 +7,7 @@ import { IoIosNotifications } from 'react-icons/io';
 // Styled components
 const HeaderContainer = styled.header`
 	color: #fff;
-	background-color: #333456;
+	background-color: #2c2c2c;
 	padding: 1em 0;
 	display: flex;
 	justify-content: space-between;
@@ -62,6 +62,10 @@ const useStyles = makeStyles((theme) => ({
 	},
 	fullWidth: {
 		maxWidth: '60%'
+	},
+	defaultColor: {
+		color: '#fff',
+		marginLeft: '0.5em'
 	}
 }));
 
@@ -83,9 +87,9 @@ function Header() {
 						alt="Victoria James"
 						src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 					/>
-					<FormControl className={classes.fullWidth} fullWidth="true">
+					<FormControl className={classes.fullWidth} fullWidth={true}>
 						<InputLabel className={classes.root}>Victoria James</InputLabel>
-						<Select>
+						<Select value="Update Profile" className={classes.defaultColor}>
 							<MenuItem value="Update Profile">Update Profile</MenuItem>
 							<MenuItem value="Sign Out">Sign Out</MenuItem>
 						</Select>

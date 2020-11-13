@@ -11,32 +11,39 @@ import ExpensesChart from '../../Charts/ExpensesChart';
 function Main() {
 	return (
 		<React.Fragment>
-			<Grid container spacing={1}>
-				<Grid item md={12}>
-					<Grid container>
-						<Grid item md={4}>
+			<Grid container spacing={3}>
+				<Grid item xs={12} sm={12} md={12}>
+					<Grid container spacing={4}>
+						<Grid item xs={12} sm={12} md={12} lg={4}>
 							<Balance />
 						</Grid>
-						<Grid item md={4}>
+						<Grid item xs={12} sm={12} md={6} lg={4}>
 							<Revenue />
 						</Grid>
-						<Grid item md={4}>
+						<Grid item xs={12} sm={12} md={6} lg={4}>
 							<Savings />
 						</Grid>
 					</Grid>
 				</Grid>
-				<Grid item md={12} />
-				<Grid item md={12} />
-
-				<Grid item md={4}>
-					<Categories />
-				</Grid>
-				<Grid item md={4}>
-					<Frequency />
-					<ExpensesChart />
-				</Grid>
-				<Grid item md={4}>
-					<Transactions />
+				<Grid item xs={12} sm={12} md={12}>
+					<Grid container spacing={4}>
+						<Grid item xs={12} sm={12} md={6} lg={4}>
+							<Categories />
+						</Grid>
+						<Grid item xs={12} sm={12} md={6} lg={4}>
+							<Grid container spacing={2}>
+								<Grid item xs={12} sm={12} md={12} lg={12}>
+									<ExpensesChart />
+								</Grid>
+								<Grid item xs={12} sm={12} md={12} lg={12}>
+									<Frequency />
+								</Grid>
+							</Grid>
+						</Grid>
+						<Grid item xs={12} sm={12} md={6} lg={4}>
+							<Transactions />
+						</Grid>
+					</Grid>
 				</Grid>
 			</Grid>
 		</React.Fragment>
