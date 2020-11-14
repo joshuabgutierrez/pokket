@@ -20,7 +20,7 @@ const StyledMenu = styled.aside`
 const Logo = styled.h3`
 	font-size: 1.5rem;
 	text-transform: uppercase;
-	padding: 1em 0;
+	padding: 1em 0 3em 0;
 	color: #fff;
 	text-align: center;
 `;

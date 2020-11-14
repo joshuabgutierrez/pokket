@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import styled from 'styled-components';
 import { AiOutlineSearch } from 'react-icons/ai';
 import { Avatar, Badge, FormControl, InputLabel, makeStyles, MenuItem, Select } from '@material-ui/core';
 import { IoIosNotifications } from 'react-icons/io';
+import { BiMenuAltRight } from 'react-icons/bi';
+import { TabPanelValueContext } from '../../Contexts/TabPanelValueContext';
 
 // Styled components
 const HeaderContainer = styled.header`
@@ -11,6 +13,7 @@ const HeaderContainer = styled.header`
 	padding: 1em 0;
 	display: flex;
 	justify-content: space-between;
+	align-items: center;
 
 	h3 {
 		margin: 0;
@@ -23,6 +26,10 @@ const StyledLeftHeader = styled.div`
 	max-width: 270px;
 	width: 100%;
 	margin-left: 3em;
+
+	@media (max-width: 599px) {
+		display: none;
+	}
 `;
 
 const StyledInputText = styled.input`
@@ -42,8 +49,14 @@ const StyledRightHeader = styled.div`
 	width: 100%;
 	max-width: 300px;
 	display: flex;
+	justify-content: center;
 	align-items: center;
 	color: #fff;
+
+	@media (max-width: 700px) {
+		width: auto;
+		margin-right: 2em;
+	}
 `;
 
 const StyledUserDetails = styled.div`
@@ -51,6 +64,26 @@ const StyledUserDetails = styled.div`
 	justify-content: center;
 	align-items: center;
 	width: 100%;
+	margin-left: 1em;
+
+	@media (max-width: 700px) {
+		width: auto;
+	}
+`;
+
+const StyledFormControl = styled(FormControl)`
+	@media (max-width: 700px) {
+		display: none;
+	}
+`;
+
+const MenuIcon = styled(BiMenuAltRight)`
+	margin-left: 2em;
+	display: none;
+
+	@media (max-width: 599px) {
+		display: block;
+	}
 `;
 
 // Material Ui styling
@@ -71,9 +104,11 @@ const useStyles = makeStyles((theme) => ({
 
 function Header() {
 	const classes = useStyles();
+	const { updateOpenState } = useContext(TabPanelValueContext);
 
 	return (
 		<HeaderContainer>
+			<MenuIcon size="30" onClick={() => updateOpenState(true)} />
 			<StyledLeftHeader>
 				<AiOutlineSearch size="25" />
 				<StyledInputText type="text" placeholder="Hi Victoria! Please click here to search..." />
@@ -87,13 +122,13 @@ function Header() {
 						alt="Victoria James"
 						src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 					/>
-					<FormControl className={classes.fullWidth} fullWidth={true}>
+					<StyledFormControl className={classes.fullWidth} fullWidth={true}>
 						<InputLabel className={classes.root}>Victoria James</InputLabel>
 						<Select value="Update Profile" className={classes.defaultColor}>
 							<MenuItem value="Update Profile">Update Profile</MenuItem>
 							<MenuItem value="Sign Out">Sign Out</MenuItem>
 						</Select>
-					</FormControl>
+					</StyledFormControl>
 				</StyledUserDetails>
 			</StyledRightHeader>
 		</HeaderContainer>

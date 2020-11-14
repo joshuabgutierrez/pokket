@@ -1,4 +1,4 @@
-import { Button, Grid, Typography } from '@material-ui/core';
+import { Button, Grid, Typography, useMediaQuery } from '@material-ui/core';
 import React from 'react';
 import styled from 'styled-components';
 
@@ -19,6 +19,12 @@ const TabTitle = styled(Typography)`
 `;
 
 function Header() {
+	const isScreenSmall = useMediaQuery((theme) => theme.breakpoints.down('xs'));
+
+	const buttonSize = {
+		size: isScreenSmall ? 'small' : 'medium'
+	};
+
 	return (
 		<React.Fragment>
 			<Grid container alignItems="center">
@@ -31,14 +37,14 @@ function Header() {
 					<Grid container justify="flex-end">
 						<Grid item xs={8} sm={8} md={7} lg={8}>
 							<ButtonContainer>
-								<Button variant="contained" color="primary">
+								<Button variant="contained" color="primary" {...buttonSize}>
 									This Week
 								</Button>
 							</ButtonContainer>
 						</Grid>
 						<Grid item xs={4} sm={4} md={5} lg={4}>
 							<ButtonContainer>
-								<Button variant="contained" color="secondary">
+								<Button variant="contained" color="secondary" {...buttonSize}>
 									November
 								</Button>
 							</ButtonContainer>

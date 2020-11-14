@@ -7,8 +7,12 @@ import DashboardContent from '../Components/DashboardContent/DashboardContent';
 import PropTypes from 'prop-types';
 import Transactions from './Transactions';
 import { TabPanelValueContext } from '../Contexts/TabPanelValueContext';
+import MobileMenu from '../Styles/MobileMenu';
 
-const HomeContainer = styled.div`background-color: #ffffff;`;
+const HomeContainer = styled.div`
+	background-color: #ffffff;
+	position: relative;
+`;
 
 const StyledTabItem = styled.div`background-color: #ffffff;`;
 
@@ -30,11 +34,13 @@ TabPanel.propTypes = {
 
 const Home = () => {
 	const { value } = useContext(TabPanelValueContext);
+	const { updateOpenState } = useContext(TabPanelValueContext);
 
 	return (
 		<HomeContainer>
+			<MobileMenu />
 			<Grid container>
-				<Grid item sm={2} md={2} lg={1}>
+				<Grid item xs={2} sm={2} md={2} lg={1}>
 					<Menu />
 				</Grid>
 				<Grid item xs={12} sm={10} md={10} lg={11}>
@@ -42,7 +48,7 @@ const Home = () => {
 						<Grid item xs={12} sm={12} md={12}>
 							<Header />
 						</Grid>
-						<Grid item xs={12} sm={12} md={12}>
+						<Grid item xs={12} sm={12} md={12} onClick={() => updateOpenState(false)}>
 							<TabPanel value={value} index={0}>
 								<DashboardContent />
 							</TabPanel>

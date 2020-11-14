@@ -26,9 +26,7 @@ const useStyles = makeStyles((theme) => ({
 		color: '#fff',
 		textTransform: 'capitalize'
 	},
-	marginSpacing: {
-		marginTop: '2.5em'
-	},
+
 	paddingSpacing: {
 		paddingBottom: '2.5em'
 	},
@@ -36,6 +34,9 @@ const useStyles = makeStyles((theme) => ({
 		fontSize: '16px',
 		minWidth: 100,
 		color: '#fff'
+	},
+	fullHeight: {
+		minHeight: '100vh'
 	}
 }));
 
@@ -49,7 +50,7 @@ export default function VerticalTabs() {
 	};
 
 	return (
-		<div className={`${classes.root} ${classes.marginSpacing} ${classes.height}`}>
+		<div className={`${classes.root} ${classes.fullHeight} `}>
 			<Tabs
 				orientation="vertical"
 				value={value}
