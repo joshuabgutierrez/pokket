@@ -26,7 +26,7 @@ const rows = [
 
 export default function TransactionsTable() {
 	return (
-		<div style={{ height: 400, width: '70%', margin: 'auto' }}>
+		<div style={{ height: 400, width: '80%', margin: 'auto' }}>
 			<DataGrid rows={rows} columns={columns} pageSize={10} checkboxSelection />
 		</div>
 	);

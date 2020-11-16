@@ -56,7 +56,7 @@ function Transactions() {
 				</Grid>
 			</Grid>
 			<Grid container className={classes.root}>
-				<Grid item sm={12} md={12} lg={12}>
+				<Grid item xs={12} sm={12} md={12} lg={12}>
 					<TransactionsTable />
 				</Grid>
 			</Grid>
