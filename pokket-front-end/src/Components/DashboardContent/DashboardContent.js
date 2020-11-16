@@ -7,7 +7,6 @@ import Main from './Main';
 const StyledDashboardContainer = styled.main`
 	color: #000;
 	height: calc(100vh - 3em);
-	padding: 3em 5em;
 	height: 110vh;
 
 	h3 {

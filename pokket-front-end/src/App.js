@@ -3,6 +3,7 @@ import { CssBaseline, ThemeProvider as MuiThemeProvider } from '@material-ui/cor
 import theme from './Styles/Theme';
 import { ThemeProvider } from 'styled-components';
 import { TabPanelValueContextProvider } from './Contexts/TabPanelValueContext';
+import { ModalContextProvider } from './Contexts/ModalContext';
 
 function App() {
 	return (
@@ -11,7 +12,9 @@ function App() {
 				<ThemeProvider theme={theme}>
 					<CssBaseline />
 					<TabPanelValueContextProvider>
-						<Home />
+						<ModalContextProvider>
+							<Home />
+						</ModalContextProvider>
 					</TabPanelValueContextProvider>
 				</ThemeProvider>
 			</MuiThemeProvider>

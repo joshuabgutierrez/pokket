@@ -8,8 +8,6 @@ import { AiFillCreditCard } from 'react-icons/ai';
 import { AiOutlineDollarCircle } from 'react-icons/ai';
 import { GiTrophyCup } from 'react-icons/gi';
 import { AiFillSetting } from 'react-icons/ai';
-import Transactions from '../../Pages/Transactions';
-import DashboardContent from '../DashboardContent/DashboardContent';
 import { TabPanelValueContext } from '../../Contexts/TabPanelValueContext';
 
 function a11yProps(index) {

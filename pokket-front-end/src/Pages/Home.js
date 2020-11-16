@@ -14,7 +14,10 @@ const HomeContainer = styled.div`
 	position: relative;
 `;
 
-const StyledTabItem = styled.div`background-color: #ffffff;`;
+const StyledTabItem = styled.div`
+	background-color: #ffffff;
+	padding: 3em 5em;
+`;
 
 function TabPanel(props) {
 	const { children, value, index, ...other } = props;

@@ -13,7 +13,7 @@ const MobileMenuContainer = styled.div`
 `;
 
 function MobileMenu() {
-	const { isOpen, updateOpenState } = useContext(TabPanelValueContext);
+	const { isOpen } = useContext(TabPanelValueContext);
 	return (
 		<MobileMenuContainer isOpen={isOpen}>
 			<MenuContent />
