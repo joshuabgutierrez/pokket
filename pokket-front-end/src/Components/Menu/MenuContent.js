@@ -71,16 +71,17 @@ export default function VerticalTabs() {
 				/>
 				<Tab
 					className={`${classes.root} ${classes.paddingSpacing} ${classes.labelIcon}`}
-					icon={<AiFillCreditCard size="20" />}
-					label="Accounts"
-					{...a11yProps(2)}
-				/>
-				<Tab
-					className={`${classes.root} ${classes.paddingSpacing} ${classes.labelIcon}`}
 					icon={<AiOutlineDollarCircle size="20" />}
 					label="Budget"
 					{...a11yProps(3)}
 				/>
+				<Tab
+					className={`${classes.root} ${classes.paddingSpacing} ${classes.labelIcon}`}
+					icon={<AiFillCreditCard size="20" />}
+					label="Accounts"
+					{...a11yProps(2)}
+				/>
+
 				<Tab
 					className={`${classes.root} ${classes.paddingSpacing} ${classes.labelIcon}`}
 					icon={<GiTrophyCup size="20" />}

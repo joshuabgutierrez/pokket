@@ -8,6 +8,7 @@ import PropTypes from 'prop-types';
 import Transactions from './Transactions';
 import { TabPanelValueContext } from '../Contexts/TabPanelValueContext';
 import MobileMenu from '../Styles/MobileMenu';
+import Budget from '../Components/Budget/Budget';
 
 const HomeContainer = styled.div`
 	background-color: #ffffff;
@@ -57,6 +58,9 @@ const Home = () => {
 							</TabPanel>
 							<TabPanel value={value} index={1}>
 								<Transactions />
+							</TabPanel>
+							<TabPanel value={value} index={2}>
+								<Budget />
 							</TabPanel>
 						</Grid>
 					</Grid>

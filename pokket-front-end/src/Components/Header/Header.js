@@ -111,7 +111,7 @@ function Header() {
 			<MenuIcon size="30" onClick={() => updateOpenState(true)} />
 			<StyledLeftHeader>
 				<AiOutlineSearch size="25" />
-				<StyledInputText type="text" placeholder="Hi Victoria! Please click here to search..." />
+				<StyledInputText type="text" placeholder="Hi Mary! Please click here to search..." />
 			</StyledLeftHeader>
 			<StyledRightHeader>
 				<Badge badgeContent={1} color="primary">
@@ -119,12 +119,12 @@ function Header() {
 				</Badge>
 				<StyledUserDetails>
 					<Avatar
-						alt="Victoria James"
+						alt="Mary Doe"
 						src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
 					/>
 					<StyledFormControl className={classes.fullWidth} fullWidth={true}>
-						<InputLabel className={classes.root}>Victoria James</InputLabel>
-						<Select value="Update Profile" className={classes.defaultColor}>
+						<InputLabel className={classes.root}>Mary Doe</InputLabel>
+						<Select value="" className={classes.defaultColor}>
 							<MenuItem value="Update Profile">Update Profile</MenuItem>
 							<MenuItem value="Sign Out">Sign Out</MenuItem>
 						</Select>
