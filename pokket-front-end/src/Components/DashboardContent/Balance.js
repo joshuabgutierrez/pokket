@@ -44,7 +44,7 @@ const Balance = () => {
 			<CardFooter>
 				<LeftCardFooter>
 					<p>CardHolder</p>
-					<p>Victoria James</p>
+					<p>Mary Doe</p>
 				</LeftCardFooter>
 				<RightCardFooter>
 					<p>Expires</p>

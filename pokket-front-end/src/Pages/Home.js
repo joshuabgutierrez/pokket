@@ -9,6 +9,7 @@ import Transactions from './Transactions';
 import { TabPanelValueContext } from '../Contexts/TabPanelValueContext';
 import MobileMenu from '../Styles/MobileMenu';
 import Budget from '../Components/Budget/Budget';
+import Accounts from '../Components/Accounts/Accounts';
 
 const HomeContainer = styled.div`
 	background-color: #ffffff;
@@ -61,6 +62,9 @@ const Home = () => {
 							</TabPanel>
 							<TabPanel value={value} index={2}>
 								<Budget />
+							</TabPanel>
+							<TabPanel value={value} index={3}>
+								<Accounts />
 							</TabPanel>
 						</Grid>
 					</Grid>
