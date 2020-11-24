@@ -39,7 +39,7 @@ LinearBar.propTypes = {
 
 function LinearProgressBar({ status }) {
 	return (
-		<React.Fragment>
+		<div>
 			<StyledTitle>
 				<Typography variant="body1">
 					Auto and Transport:{' '}
@@ -52,7 +52,7 @@ function LinearProgressBar({ status }) {
 				</StyledText>
 			</StyledTitle>
 			<LinearBar status={status} variant="determinate" value={70} />
-		</React.Fragment>
+		</div>
 	);
 }
 

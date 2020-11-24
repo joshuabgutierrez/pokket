@@ -10,6 +10,7 @@ import { TabPanelValueContext } from '../Contexts/TabPanelValueContext';
 import MobileMenu from '../Styles/MobileMenu';
 import Budget from '../Components/Budget/Budget';
 import Accounts from '../Components/Accounts/Accounts';
+import Goals from '../Components/Goals/Goals';
 
 const HomeContainer = styled.div`
 	background-color: #ffffff;
@@ -65,6 +66,9 @@ const Home = () => {
 							</TabPanel>
 							<TabPanel value={value} index={3}>
 								<Accounts />
+							</TabPanel>
+							<TabPanel value={value} index={4}>
+								<Goals />
 							</TabPanel>
 						</Grid>
 					</Grid>
