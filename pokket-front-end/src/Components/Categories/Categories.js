@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { HiDotsHorizontal } from 'react-icons/hi';
 import Category from './Category';
 import styled from 'styled-components';
+import axios from 'axios';
 
 const CategoriesContainer = styled.div`
 	background-color: #007ee3;
@@ -19,6 +20,16 @@ const CategoriesHeader = styled.header`
 `;
 
 function Categories() {
+	const [ categories, setCategories ] = useState([]);
+
+	useEffect(() => {
+		async function getCategories() {
+			const categories = await axios('http://localhost:1337/categories');
+			setCategories(categories.data);
+		}
+		getCategories();
+	}, []);
+
 	return (
 		<CategoriesContainer>
 			<CategoriesHeader>
@@ -26,11 +37,17 @@ function Categories() {
 				<HiDotsHorizontal size="35" />
 			</CategoriesHeader>
 			<section>
-				<Category />
-				<Category />
-				<Category />
-				<Category />
-				<Category />
+				{categories.length > 0 ? (
+					categories.map((category) => (
+						<Category
+							key={category.id}
+							name={category.name}
+							avatar={'http://localhost:1337' + category.category_avatar.url}
+						/>
+					))
+				) : (
+					<Typography variant="h6">...Loading</Typography>
+				)}
 			</section>
 		</CategoriesContainer>
 	);

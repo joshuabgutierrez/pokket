@@ -8,25 +8,38 @@ import {
 	OutlinedInput,
 	Select
 } from '@material-ui/core';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { MuiPickersUtilsProvider, KeyboardDatePicker } from '@material-ui/pickers';
 import 'date-fns';
 import DateFnsUtils from '@date-io/date-fns';
+import axios from 'axios';
 
 const useStyles = makeStyles({
 	root: {
 		width: '150px',
 		margin: '0 auto'
+	},
+	toCapitalize: {
+		textTransform: 'capitalize'
 	}
 });
 
 function TransactionForm() {
+	const [ categories, setCategories ] = useState([]);
 	const [ category, setCategory ] = useState('');
 	const [ selectedDate, setSelectedDate ] = useState(new Date());
 
 	const handleDateChange = (date) => {
 		setSelectedDate(date);
 	};
+
+	useEffect(() => {
+		async function getCategories() {
+			const categories = await axios('http://localhost:1337/categories');
+			setCategories(categories.data);
+		}
+		getCategories();
+	}, []);
 
 	const classes = useStyles();
 	return (
@@ -65,11 +78,15 @@ function TransactionForm() {
 										value={category}
 										onChange={(e) => setCategory(e.target.value)}
 									>
-										<MenuItem value="Housing">Housing</MenuItem>
-										<MenuItem value="Transportation">Transportation</MenuItem>
-										<MenuItem value="Food">Food</MenuItem>
-										<MenuItem value="Utilities">Utilities</MenuItem>
-										<MenuItem value="Insurance">Insurance</MenuItem>
+										{categories.map((category) => (
+											<MenuItem
+												key={category.id}
+												value={category}
+												className={classes.toCapitalize}
+											>
+												{category.name}
+											</MenuItem>
+										))}
 									</Select>
 								</FormControl>
 							</Grid>

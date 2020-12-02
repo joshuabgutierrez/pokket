@@ -5,6 +5,7 @@ import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import { ModalContext } from '../../Contexts/ModalContext';
 import TransactionForm from './TransactionForm';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
 	modal: {
@@ -41,6 +42,7 @@ export default function TransactionsModal() {
 			>
 				<Fade in={isModalOpen}>
 					<div className={classes.paper}>
+						<Typography variant="h5">Add new transaction</Typography>
 						<TransactionForm />
 					</div>
 				</Fade>

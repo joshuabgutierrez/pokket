@@ -1,6 +1,5 @@
 import { Typography } from '@material-ui/core';
 import React from 'react';
-import { BsHouseDoor } from 'react-icons/bs';
 import { MdNavigateNext } from 'react-icons/md';
 import styled from 'styled-components';
 
@@ -8,7 +7,7 @@ const CategoryContainer = styled.div`
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	margin: 2.75em 0;
+	margin: 1em 0;
 `;
 
 const CategoryInfo = styled.div`
@@ -16,13 +15,13 @@ const CategoryInfo = styled.div`
 	align-items: center;
 `;
 
-function Category() {
+function Category({ name, avatar }) {
 	return (
 		<CategoryContainer>
 			<CategoryInfo>
-				<BsHouseDoor size="25" />
+				<img src={avatar} alt="icon for category" />
 				<Typography variant="body2" style={{ marginLeft: '0.5em' }}>
-					Housing
+					{name}
 				</Typography>
 			</CategoryInfo>
 			<CategoryInfo>
