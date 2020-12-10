@@ -7,6 +7,7 @@ import { ModalContextProvider } from './Contexts/ModalContext';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Landing from './Pages/Landing';
 import SignUp from './Components/UserForms/Signup';
+import { TransactionsContextProvider } from './Contexts/TransactionsContext';
 
 function App() {
 	return (
@@ -17,11 +18,13 @@ function App() {
 						<CssBaseline />
 						<TabPanelValueContextProvider>
 							<ModalContextProvider>
-								<Switch>
-									<Route exact path="/" component={Landing} />
-									<Route exact path="/home" component={Home} />
-									<Route exact path="/register" component={SignUp} />
-								</Switch>
+								<TransactionsContextProvider>
+									<Switch>
+										<Route exact path="/" component={Landing} />
+										<Route exact path="/dashboard" component={Home} />
+										<Route exact path="/register" component={SignUp} />
+									</Switch>
+								</TransactionsContextProvider>
 							</ModalContextProvider>
 						</TabPanelValueContextProvider>
 					</ThemeProvider>
