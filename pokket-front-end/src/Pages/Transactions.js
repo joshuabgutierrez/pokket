@@ -1,10 +1,12 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import Typography from '@material-ui/core/Typography';
-import { Button, Grid, makeStyles } from '@material-ui/core';
+import { Button, Grid, makeStyles, Snackbar } from '@material-ui/core';
 import { BsPlus } from 'react-icons/bs';
 import TransactionsTable from '../Components/Transactions/TransactionsTable';
 import { ModalContext } from '../Contexts/ModalContext';
 import TransactionsModal from '../Components/Transactions/TransactionsModal';
+import { TransactionsContext } from '../Contexts/TransactionsContext';
+import Alert from '@material-ui/lab/Alert';
 
 // Material UI styling
 const useStyles = makeStyles({
@@ -18,7 +20,21 @@ const useStyles = makeStyles({
 
 function Transactions() {
 	const classes = useStyles();
-	const { handleOpen } = useContext(ModalContext);
+	const { handleOpen, handleIsUpdating, successMessageOpen, handleCloseOnSuccessMessage } = useContext(ModalContext);
+	const { transactionsSelected, deleteTransaction } = useContext(TransactionsContext);
+	const [ open, setOpen ] = useState(false);
+
+	function handleEdit() {
+		if (transactionsSelected === null || transactionsSelected.rowIds.length === 0) {
+			return setOpen(true);
+		}
+		handleOpen();
+		handleIsUpdating();
+	}
+
+	function handleDelete() {
+		deleteTransaction(transactionsSelected.rowIds[0]);
+	}
 
 	return (
 		<div>
@@ -32,12 +48,22 @@ function Transactions() {
 				<Grid item lg={6}>
 					<Grid container align="center" justify="center" spacing={2}>
 						<Grid item lg={4}>
-							<Button variant="contained" size="small" className={classes.buttonWidth}>
+							<Button
+								variant="contained"
+								size="small"
+								className={classes.buttonWidth}
+								onClick={handleEdit}
+							>
 								Edit Transaction
 							</Button>
 						</Grid>
 						<Grid item lg={4}>
-							<Button variant="contained" size="small" className={classes.buttonWidth}>
+							<Button
+								variant="contained"
+								size="small"
+								className={classes.buttonWidth}
+								onClick={handleDelete}
+							>
 								Delete Transaction
 							</Button>
 						</Grid>
@@ -61,6 +87,23 @@ function Transactions() {
 				</Grid>
 			</Grid>
 			<TransactionsModal />
+			{/* Error message */}
+			<Snackbar anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }} open={open}>
+				<Alert severity="error" onClose={() => setOpen(false)}>
+					Please, select a transaction
+				</Alert>
+			</Snackbar>
+			{/* Success Message */}
+			<Snackbar
+				anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
+				open={successMessageOpen}
+				autoHideDuration={3000}
+				onClose={handleCloseOnSuccessMessage}
+			>
+				<Alert onClose={handleCloseOnSuccessMessage} severity="success">
+					Transaction saved successfully
+				</Alert>
+			</Snackbar>
 		</div>
 	);
 }
