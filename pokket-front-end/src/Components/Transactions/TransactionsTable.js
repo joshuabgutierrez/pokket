@@ -47,6 +47,7 @@ export default function TransactionsTable() {
 					amount: transaction.transaction_amount,
 					company: transaction.transaction_company
 				}));
+
 				return setRows(rows);
 			}
 			populateTable();

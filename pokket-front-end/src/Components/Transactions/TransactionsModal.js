@@ -31,7 +31,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function TransactionsModal() {
 	const classes = useStyles();
-	const { isModalOpen, handleClose, isUpdating } = useContext(ModalContext);
+	const { isModalOpen, handleClose, isUpdating, handleClickOnSuccessMessage } = useContext(ModalContext);
 	const { addTransaction, updateTransaction, transactionsSelected, currentIndex } = useContext(TransactionsContext);
 
 	// Handling Transaction form using FormContext to not make the form component larger
@@ -50,8 +50,15 @@ export default function TransactionsModal() {
 
 		if (!isUpdating) {
 			addTransaction(newTransaction);
+			handleClose();
+			handleClickOnSuccessMessage();
 		} else {
 			updateTransaction(newTransaction, transactionsSelected.rowIds[currentIndex]);
+
+			if (currentIndex === transactionsSelected.rowIds.length - 1) {
+				handleClose();
+				handleClickOnSuccessMessage();
+			}
 		}
 	};
 

@@ -41,9 +41,6 @@ function UpdateTransactionForm({ onSubmit, errors }) {
 		return transactions.transactions.find((transaction) => transaction.id === Number(id));
 	});
 
-	// console.log(transactionsToUpdate[currentIndex].transaction_date);
-	// console.log(new Date(transactionsToUpdate[currentIndex].transaction_date));
-
 	// Get categories from database
 	useEffect(() => {
 		async function getCategories() {
