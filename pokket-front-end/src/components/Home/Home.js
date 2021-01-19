@@ -10,6 +10,7 @@ import Sidebar from '../Sidebar/Sidebar';
 
 const drawerWidth = 240;
 
+// Material-UI Styling
 const useStyles = makeStyles((theme) => ({
 	root: {
 		display: 'flex'
@@ -29,6 +30,7 @@ const useStyles = makeStyles((theme) => ({
 		padding: theme.spacing(3)
 	}
 }));
+// !Material-UI Styling
 
 function Home() {
 	const classes = useStyles();

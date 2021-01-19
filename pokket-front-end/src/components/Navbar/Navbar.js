@@ -1,13 +1,19 @@
-import { AppBar, IconButton, makeStyles, Toolbar, Typography } from '@material-ui/core';
+import { AppBar, Badge, IconButton, makeStyles, Toolbar, Typography } from '@material-ui/core';
 import React from 'react';
 import { HiMenu as MenuIcon } from 'react-icons/hi';
+import { BsFillBellFill as NotificationsIcon } from 'react-icons/bs';
 
 const drawerWidth = 240;
 
+// Material-UI Styling
 const useStyles = makeStyles((theme) => ({
 	appBar: {
 		minWidth: '100%',
 		zIndex: '1',
+		display: 'flex',
+		flexDirection: 'row',
+		alignItems: 'center',
+		justifyContent: 'space-between',
 		[theme.breakpoints.up('sm')]: {
 			width: `calc(100% - ${drawerWidth}px)`,
 			marginLeft: drawerWidth
@@ -18,8 +24,12 @@ const useStyles = makeStyles((theme) => ({
 		[theme.breakpoints.up('sm')]: {
 			display: 'none'
 		}
+	},
+	badgeStyle: {
+		marginRight: '3em'
 	}
 }));
+// !Material-UI Styling
 
 function Navbar({ handleDrawerToggle }) {
 	const classes = useStyles();
@@ -39,6 +49,9 @@ function Navbar({ handleDrawerToggle }) {
 					Pokket
 				</Typography>
 			</Toolbar>
+			<Badge badgeContent={1} color="error" className={classes.badgeStyle}>
+				<NotificationsIcon size={20} />
+			</Badge>
 		</AppBar>
 	);
 }

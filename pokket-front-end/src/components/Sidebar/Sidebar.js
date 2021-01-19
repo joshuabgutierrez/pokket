@@ -1,21 +1,11 @@
 import React from 'react';
-import {
-	Divider,
-	Drawer,
-	Hidden,
-	List,
-	ListItem,
-	ListItemIcon,
-	ListItemText,
-	makeStyles,
-	useTheme
-} from '@material-ui/core';
-import { GiNetworkBars as DashboardIcon } from 'react-icons/gi';
-import { RiMoneyDollarCircleLine as TransactionsIcon } from 'react-icons/ri';
-import { Link } from 'react-router-dom';
+import { Divider, Drawer, Hidden, makeStyles, useTheme } from '@material-ui/core';
+import SidebarProfile from './SidebarProfile';
+import SidebarItems from './SidebarItems';
 
 const drawerWidth = 240;
 
+// Material-UI Styling
 const useStyles = makeStyles((theme) => ({
 	drawer: {
 		zIndex: '0',
@@ -29,6 +19,7 @@ const useStyles = makeStyles((theme) => ({
 	},
 	toolbar: theme.mixins.toolbar
 }));
+// !Material-UI-Styling
 
 function Sidebar(props) {
 	const classes = useStyles();
@@ -40,21 +31,9 @@ function Sidebar(props) {
 	const drawer = (
 		<div>
 			<div className={classes.toolbar} />
+			<SidebarProfile />
 			<Divider />
-			<List>
-				<ListItem button key={2} component={Link} to="/">
-					<ListItemIcon>
-						<DashboardIcon size={25} />
-					</ListItemIcon>
-					<ListItemText primary="Dashboard" />
-				</ListItem>
-				<ListItem button key={1} component={Link} to="/transactions">
-					<ListItemIcon>
-						<TransactionsIcon size={25} />
-					</ListItemIcon>
-					<ListItemText primary="Transactions" />
-				</ListItem>
-			</List>
+			<SidebarItems />
 		</div>
 	);
 
