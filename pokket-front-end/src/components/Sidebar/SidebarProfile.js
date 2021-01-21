@@ -21,7 +21,7 @@ function SidebarProfile() {
 	return (
 		<div className={classes.root}>
 			<Avatar
-				alt="Mary Doe"
+				alt="Profile Picture"
 				src="https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=334&q=80"
 				className={classes.large}
 			/>

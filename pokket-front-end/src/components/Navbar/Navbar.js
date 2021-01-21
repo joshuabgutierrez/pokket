@@ -50,7 +50,7 @@ function Navbar({ handleDrawerToggle }) {
 				</Typography>
 			</Toolbar>
 			<Badge badgeContent={1} color="error" className={classes.badgeStyle}>
-				<NotificationsIcon size={20} />
+				<NotificationsIcon size={20} title="Bell icon with number of notifications" />
 			</Badge>
 		</AppBar>
 	);
