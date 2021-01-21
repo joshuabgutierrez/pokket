@@ -35,7 +35,9 @@ export default function IncomeExpensesChart() {
 					legend: {
 						display: true,
 						position: 'right'
-					}
+					},
+					maintainAspectRatio: true,
+					responsive: true
 				}}
 			/>
 		</React.Fragment>

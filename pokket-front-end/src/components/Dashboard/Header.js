@@ -18,11 +18,11 @@ function Header() {
 	return (
 		<div>
 			<Grid container>
-				<Grid item lg={6}>
+				<Grid item xs={6} sm={6} md={6} lg={6}>
 					<Typography variant="h6">Hey Mary!</Typography>
 					<Typography variant="body2">Happy Wednesday! Let's get budgeting</Typography>
 				</Grid>
-				<Grid item lg={6} className={classes.flexbox}>
+				<Grid item xs={6} sm={6} md={6} lg={6} className={classes.flexbox}>
 					<ButtonGroup disableElevation size="small" variant="contained">
 						<Button color="primary" className={classes.spacing}>
 							This Week

@@ -49,7 +49,9 @@ export default function CategoriesSummaryChart() {
 					legend: {
 						display: true,
 						position: 'right'
-					}
+					},
+					maintainAspectRatio: true,
+					responsive: true
 				}}
 			/>
 

@@ -9,7 +9,7 @@ const drawerWidth = 240;
 const useStyles = makeStyles((theme) => ({
 	drawer: {
 		zIndex: '0',
-		[theme.breakpoints.up('sm')]: {
+		[theme.breakpoints.up('lg')]: {
 			width: drawerWidth,
 			flexShrink: 0
 		}
@@ -39,7 +39,7 @@ function Sidebar(props) {
 
 	return (
 		<nav className={classes.drawer} aria-label="mailbox folders">
-			<Hidden smUp implementation="css">
+			<Hidden lgUp implementation="css">
 				<Drawer
 					container={container}
 					variant="temporary"
@@ -56,7 +56,7 @@ function Sidebar(props) {
 					{drawer}
 				</Drawer>
 			</Hidden>
-			<Hidden xsDown implementation="css">
+			<Hidden mdDown implementation="css">
 				<Drawer
 					classes={{
 						paper: classes.drawerPaper
