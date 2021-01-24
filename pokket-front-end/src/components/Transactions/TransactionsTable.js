@@ -1,24 +1,15 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import clsx from 'clsx';
-import { lighten, makeStyles } from '@material-ui/core/styles';
+import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';
 import TableBody from '@material-ui/core/TableBody';
 import TableCell from '@material-ui/core/TableCell';
 import TableContainer from '@material-ui/core/TableContainer';
-import TableHead from '@material-ui/core/TableHead';
 import TablePagination from '@material-ui/core/TablePagination';
 import TableRow from '@material-ui/core/TableRow';
-import TableSortLabel from '@material-ui/core/TableSortLabel';
-import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
 import Paper from '@material-ui/core/Paper';
 import Checkbox from '@material-ui/core/Checkbox';
-import IconButton from '@material-ui/core/IconButton';
-import Tooltip from '@material-ui/core/Tooltip';
-import { MdDelete as DeleteIcon } from 'react-icons/md';
-import { BiFilter as FilterListIcon } from 'react-icons/bi';
-import { FaEdit as EditIcon } from 'react-icons/fa';
+import TransactionsTableHead from './TransactionsTableHead';
+import TransactionsToolbar from './TransactionsToolbar';
 
 function createData(date, transaction, category, amount, location) {
 	return { date, transaction, category, amount, location };
@@ -66,135 +57,6 @@ function stableSort(array, comparator) {
 	return stabilizedThis.map((el) => el[0]);
 }
 
-const headCells = [
-	{ id: 'date', numeric: false, disablePadding: true, label: 'Date' },
-	{ id: 'transactions', numeric: true, disablePadding: false, label: 'Transactions' },
-	{ id: 'category', numeric: true, disablePadding: false, label: 'Category' },
-	{ id: 'amount', numeric: true, disablePadding: false, label: 'Amount ($)' },
-	{ id: 'location', numeric: true, disablePadding: false, label: 'Location' }
-];
-
-function EnhancedTableHead(props) {
-	const { classes, onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
-	const createSortHandler = (property) => (event) => {
-		onRequestSort(event, property);
-	};
-
-	return (
-		<TableHead>
-			<TableRow>
-				<TableCell padding="checkbox">
-					<Checkbox
-						indeterminate={numSelected > 0 && numSelected < rowCount}
-						checked={rowCount > 0 && numSelected === rowCount}
-						onChange={onSelectAllClick}
-						inputProps={{ 'aria-label': 'select all desserts' }}
-					/>
-				</TableCell>
-				{headCells.map((headCell) => (
-					<TableCell
-						key={headCell.id}
-						align={headCell.numeric ? 'right' : 'left'}
-						padding={headCell.disablePadding ? 'none' : 'default'}
-						sortDirection={orderBy === headCell.id ? order : false}
-					>
-						<TableSortLabel
-							active={orderBy === headCell.id}
-							direction={orderBy === headCell.id ? order : 'asc'}
-							onClick={createSortHandler(headCell.id)}
-						>
-							{headCell.label}
-							{orderBy === headCell.id ? (
-								<span className={classes.visuallyHidden}>
-									{order === 'desc' ? 'sorted descending' : 'sorted ascending'}
-								</span>
-							) : null}
-						</TableSortLabel>
-					</TableCell>
-				))}
-			</TableRow>
-		</TableHead>
-	);
-}
-
-EnhancedTableHead.propTypes = {
-	classes: PropTypes.object.isRequired,
-	numSelected: PropTypes.number.isRequired,
-	onRequestSort: PropTypes.func.isRequired,
-	onSelectAllClick: PropTypes.func.isRequired,
-	order: PropTypes.oneOf([ 'asc', 'desc' ]).isRequired,
-	orderBy: PropTypes.string.isRequired,
-	rowCount: PropTypes.number.isRequired
-};
-
-const useToolbarStyles = makeStyles((theme) => ({
-	root: {
-		paddingLeft: theme.spacing(2),
-		paddingRight: theme.spacing(1)
-	},
-	highlight:
-		theme.palette.type === 'light'
-			? {
-					color: theme.palette.secondary.main,
-					backgroundColor: lighten(theme.palette.secondary.light, 0.85)
-				}
-			: {
-					color: theme.palette.text.primary,
-					backgroundColor: theme.palette.secondary.dark
-				},
-	title: {
-		flex: '1 1 100%'
-	}
-}));
-
-const EnhancedTableToolbar = (props) => {
-	const classes = useToolbarStyles();
-	const { numSelected } = props;
-
-	return (
-		<Toolbar
-			className={clsx(classes.root, {
-				[classes.highlight]: numSelected > 0
-			})}
-		>
-			{numSelected > 0 ? (
-				<Typography className={classes.title} color="inherit" variant="subtitle1" component="div">
-					{numSelected} selected
-				</Typography>
-			) : (
-				<Typography className={classes.title} variant="h6" id="tableTitle" component="div">
-					Recent Transactions
-				</Typography>
-			)}
-
-			{numSelected > 0 ? (
-				<React.Fragment>
-					<Tooltip title="Edit">
-						<IconButton aria-label="edit">
-							<EditIcon />
-						</IconButton>
-					</Tooltip>
-					<Tooltip title="Delete">
-						<IconButton aria-label="delete">
-							<DeleteIcon />
-						</IconButton>
-					</Tooltip>
-				</React.Fragment>
-			) : (
-				<Tooltip title="Filter list">
-					<IconButton aria-label="filter list">
-						<FilterListIcon />
-					</IconButton>
-				</Tooltip>
-			)}
-		</Toolbar>
-	);
-};
-
-EnhancedTableToolbar.propTypes = {
-	numSelected: PropTypes.number.isRequired
-};
-
 const useStyles = makeStyles((theme) => ({
 	root: {
 		width: '100%'
@@ -235,7 +97,7 @@ export default function TransactionsTable() {
 
 	const handleSelectAllClick = (event) => {
 		if (event.target.checked) {
-			const newSelecteds = rows.map((n) => n.name);
+			const newSelecteds = rows.map((n) => n.transaction);
 			setSelected(newSelecteds);
 			return;
 		}
@@ -275,7 +137,7 @@ export default function TransactionsTable() {
 	return (
 		<div className={classes.root}>
 			<Paper className={classes.paper}>
-				<EnhancedTableToolbar numSelected={selected.length} />
+				<TransactionsToolbar numSelected={selected.length} />
 				<TableContainer>
 					<Table
 						className={classes.table}
@@ -283,7 +145,7 @@ export default function TransactionsTable() {
 						size="medium"
 						aria-label="enhanced table"
 					>
-						<EnhancedTableHead
+						<TransactionsTableHead
 							classes={classes}
 							numSelected={selected.length}
 							order={order}
@@ -296,13 +158,13 @@ export default function TransactionsTable() {
 							{stableSort(rows, getComparator(order, orderBy))
 								.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
 								.map((row, index) => {
-									const isItemSelected = isSelected(row.name);
+									const isItemSelected = isSelected(row.transaction);
 									const labelId = `enhanced-table-checkbox-${index}`;
 
 									return (
 										<TableRow
 											hover
-											onClick={(event) => handleClick(event, row.name)}
+											onClick={(event) => handleClick(event, row.transaction)}
 											role="checkbox"
 											aria-checked={isItemSelected}
 											tabIndex={-1}
