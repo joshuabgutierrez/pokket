@@ -7,7 +7,7 @@ const headCells = [
 	{ id: 'transactions', numeric: true, disablePadding: false, label: 'Transactions' },
 	{ id: 'category', numeric: true, disablePadding: false, label: 'Category' },
 	{ id: 'amount', numeric: true, disablePadding: false, label: 'Amount ($)' },
-	{ id: 'location', numeric: true, disablePadding: false, label: 'Location' }
+	{ id: 'receiver', numeric: true, disablePadding: false, label: 'Receiver' }
 ];
 
 export default function TransactionsTableHead(props) {

@@ -1,9 +1,19 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Typography from '@material-ui/core/Typography';
 import { Button, Grid } from '@material-ui/core';
 import TransactionsTable from './TransactionsTable';
+import TransactionsModal from './TransactionsModal';
 
 function Main() {
+	const [ open, setOpen ] = useState(false);
+
+	const handleOpen = () => {
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
+	};
 	return (
 		<div>
 			<Grid container spacing={5}>
@@ -13,7 +23,7 @@ function Main() {
 							<Typography variant="h6">Transactions</Typography>
 						</Grid>
 						<Grid item xs={6} sm={4} md={2} lg={2}>
-							<Button variant="contained" size="small">
+							<Button variant="contained" size="small" onClick={handleOpen}>
 								Add Transaction
 							</Button>
 						</Grid>
@@ -23,6 +33,7 @@ function Main() {
 					<TransactionsTable />
 				</Grid>
 			</Grid>
+			<TransactionsModal open={open} handleOpen={handleOpen} handleClose={handleClose} />
 		</div>
 	);
 }

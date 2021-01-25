@@ -11,8 +11,8 @@ import Checkbox from '@material-ui/core/Checkbox';
 import TransactionsTableHead from './TransactionsTableHead';
 import TransactionsToolbar from './TransactionsToolbar';
 
-function createData(date, transaction, category, amount, location) {
-	return { date, transaction, category, amount, location };
+function createData(date, transaction, category, amount, receiver) {
+	return { date, transaction, category, amount, receiver };
 }
 
 const rows = [
@@ -183,7 +183,7 @@ export default function TransactionsTable() {
 											<TableCell align="right">{row.transaction}</TableCell>
 											<TableCell align="right">{row.category}</TableCell>
 											<TableCell align="right">{row.amount}</TableCell>
-											<TableCell align="right">{row.location}</TableCell>
+											<TableCell align="right">{row.receiver}</TableCell>
 										</TableRow>
 									);
 								})}
