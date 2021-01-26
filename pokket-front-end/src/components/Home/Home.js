@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import Dashboard from '../../pages/Dashboard';
@@ -43,7 +42,6 @@ function Home() {
 
 	return (
 		<div className={classes.root}>
-			<CssBaseline />
 			<Navbar handleDrawerToggle={handleDrawerToggle} />
 			<Sidebar mobileOpen={mobileOpen} handleDrawerToggle={handleDrawerToggle} />
 			<main className={classes.content}>

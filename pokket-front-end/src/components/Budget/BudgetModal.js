@@ -3,7 +3,9 @@ import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-import AddTransactionForm from './AddTransactionForm';
+import AddBudgetForm from './AddBudgetForm';
+import { Grid } from '@material-ui/core';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
 	modal: {
@@ -16,12 +18,12 @@ const useStyles = makeStyles((theme) => ({
 		boxShadow: theme.shadows[5],
 		padding: theme.spacing(2, 4, 3),
 		outline: 'none',
-		width: '40%',
-		borderRadius: '5px'
+		borderRadius: '5px',
+		maxWidth: '300px'
 	}
 }));
 
-export default function TransactionsModal({ open, handleClose }) {
+export default function BudgetModal({ handleClose, open }) {
 	const classes = useStyles();
 
 	return (
@@ -40,7 +42,14 @@ export default function TransactionsModal({ open, handleClose }) {
 			>
 				<Fade in={open}>
 					<div className={classes.paper}>
-						<AddTransactionForm />
+						<Grid container>
+							<Grid item xs={12} sm={12} md={12} lg={12}>
+								<Typography variant="h6">Add a new budget</Typography>
+							</Grid>
+							<Grid item xs={12} sm={12} md={12} lg={12}>
+								<AddBudgetForm />
+							</Grid>
+						</Grid>
 					</div>
 				</Fade>
 			</Modal>
