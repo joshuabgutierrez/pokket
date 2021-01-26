@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import { makeStyles } from '@material-ui/core/styles';
 import { Switch, Route, Redirect } from 'react-router-dom';
-import Dashboard from '../Dashboard/Main';
-import Transactions from '../Transactions/Main';
+import Dashboard from '../../pages/Dashboard';
+import Transactions from '../../pages/Transactions';
 import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
+import Budget from '../../pages/Budget';
 
 const drawerWidth = 240;
 
@@ -53,6 +54,9 @@ function Home() {
 					</Route>
 					<Route exact path="/transactions">
 						<Transactions />
+					</Route>
+					<Route exact path="/budget">
+						<Budget />
 					</Route>
 					<Redirect to="/dashboard" />
 				</Switch>
