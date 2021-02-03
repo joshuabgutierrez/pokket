@@ -1,27 +1,11 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
 import AddBudgetForm from './AddBudgetForm';
 import { Grid } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
-
-const useStyles = makeStyles((theme) => ({
-	modal: {
-		display: 'flex',
-		alignItems: 'center',
-		justifyContent: 'center'
-	},
-	paper: {
-		backgroundColor: theme.palette.background.paper,
-		boxShadow: theme.shadows[5],
-		padding: theme.spacing(2, 4, 3),
-		outline: 'none',
-		borderRadius: '5px',
-		maxWidth: '300px'
-	}
-}));
+import useStyles from '../../theme/ModalComponentStyles';
 
 export default function BudgetModal({ handleClose, open }) {
 	const classes = useStyles();

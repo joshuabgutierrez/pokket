@@ -17,7 +17,7 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-function BillContainer() {
+function BillContainer({ handleOpenPayBillModal }) {
 	const classes = useStyles();
 	return (
 		<StyledBillContainer>
@@ -27,7 +27,7 @@ function BillContainer() {
 					<Typography variant="h5">$19.99</Typography>
 				</Grid>
 				<Grid item xs={12} sm={6} md={6} lg={6} className={classes.flex}>
-					<Button size="small" variant="contained">
+					<Button size="small" variant="contained" onClick={handleOpenPayBillModal}>
 						Pay Now
 					</Button>
 				</Grid>

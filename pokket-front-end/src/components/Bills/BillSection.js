@@ -11,7 +11,7 @@ const StyledSection = styled.section`
 	text-align: center;
 `;
 
-function BillSection() {
+function BillSection({ handleOpenPayBillModal }) {
 	return (
 		<Grid container justify="center">
 			<Grid item xs={12} sm={10} md={8} lg={8}>
@@ -20,8 +20,8 @@ function BillSection() {
 				</StyledSection>
 			</Grid>
 			<Grid item xs={12} sm={10} md={8} lg={8}>
-				<BillContainer />
-				<BillContainer />
+				<BillContainer handleOpenPayBillModal={handleOpenPayBillModal} />
+				<BillContainer handleOpenPayBillModal={handleOpenPayBillModal} />
 			</Grid>
 		</Grid>
 	);

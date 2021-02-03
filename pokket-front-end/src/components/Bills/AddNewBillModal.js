@@ -1,33 +1,32 @@
 import React from 'react';
-import Modal from '@material-ui/core/Modal';
-import Backdrop from '@material-ui/core/Backdrop';
-import Fade from '@material-ui/core/Fade';
-import AddTransactionForm from './AddTransactionForm';
+import { Backdrop, Fade, Modal } from '@material-ui/core';
 import useStyles from '../../theme/ModalComponentStyles';
+import AddNewBillForm from './AddNewBillForm';
 
-export default function TransactionsModal({ open, handleClose }) {
+function AddNewBillModal({ openAddNewBillModal, handleCloseAddNewBillModal }) {
 	const classes = useStyles();
-
 	return (
 		<div>
 			<Modal
 				aria-labelledby="transition-modal-title"
 				aria-describedby="transition-modal-description"
 				className={classes.modal}
-				open={open}
-				onClose={handleClose}
+				open={openAddNewBillModal}
+				onClose={handleCloseAddNewBillModal}
 				closeAfterTransition
 				BackdropComponent={Backdrop}
 				BackdropProps={{
 					timeout: 500
 				}}
 			>
-				<Fade in={open}>
+				<Fade in={openAddNewBillModal}>
 					<div className={classes.paper}>
-						<AddTransactionForm />
+						<AddNewBillForm className={classes.paper} />
 					</div>
 				</Fade>
 			</Modal>
 		</div>
 	);
 }
+
+export default AddNewBillModal;
