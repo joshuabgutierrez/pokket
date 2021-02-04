@@ -8,6 +8,7 @@ import Navbar from '../Navbar/Navbar';
 import Sidebar from '../Sidebar/Sidebar';
 import Budget from '../../pages/Budget';
 import Bills from '../../pages/Bills';
+import Goals from '../../pages/Goals';
 
 const drawerWidth = 240;
 
@@ -59,6 +60,9 @@ function Home() {
 					</Route>
 					<Route exact path="/bills">
 						<Bills />
+					</Route>
+					<Route exact path="/goals">
+						<Goals />
 					</Route>
 					<Redirect to="/dashboard" />
 				</Switch>
