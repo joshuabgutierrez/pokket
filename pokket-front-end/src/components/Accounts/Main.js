@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Button, Grid, makeStyles } from '@material-ui/core';
 import Typography from '@material-ui/core/Typography';
 import AccountsTotal from './AccountsTotal';
 import AccountsDetails from './AccountsDetail';
+import AddAccountModal from './AddAccountModal';
 
 const useStyles = makeStyles({
 	header: {
@@ -16,6 +17,16 @@ const useStyles = makeStyles({
 
 function Main() {
 	const classes = useStyles();
+	const [ open, setOpen ] = useState(false);
+
+	const handleOpen = () => {
+		setOpen(true);
+	};
+
+	const handleClose = () => {
+		setOpen(false);
+	};
+
 	return (
 		<div>
 			<Grid container spacing={3}>
@@ -25,7 +36,7 @@ function Main() {
 							<Typography variant="h5">Your accounts</Typography>
 						</Grid>
 						<Grid item xs={6} sm={6} md={6} lg={6} className={classes.flex}>
-							<Button size="small" variant="contained">
+							<Button size="small" variant="contained" onClick={handleOpen}>
 								Add Account
 							</Button>
 						</Grid>
@@ -61,6 +72,7 @@ function Main() {
 					</Grid>
 				</Grid>
 			</Grid>
+			<AddAccountModal open={open} handleClose={handleClose} />
 		</div>
 	);
 }
