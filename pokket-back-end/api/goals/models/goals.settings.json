@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "goals",
+  "info": {
+    "name": "Goals",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "goal_name": {
+      "type": "string"
+    },
+    "goal_projected_date": {
+      "type": "date"
+    },
+    "goal_amount": {
+      "type": "decimal"
+    },
+    "goal_current_amount": {
+      "type": "decimal",
+      "default": 0
+    },
+    "goal_is_complete": {
+      "type": "boolean",
+      "default": false
+    },
+    "goal_contribution_frequency": {
+      "type": "string"
+    },
+    "goal_contribution_amount": {
+      "type": "decimal"
+    },
+    "goal_user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "budgets",
+  "info": {
+    "name": "Budget",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "category": {
+      "model": "category"
+    },
+    "subcategory": {
+      "model": "subcategory"
+    },
+    "budget_goal_amount": {
+      "type": "decimal"
+    },
+    "budget_current_amount": {
+      "type": "decimal",
+      "default": 0
+    },
+    "budget_user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "bills",
+  "info": {
+    "name": "Bills",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "bill_name": {
+      "type": "string"
+    },
+    "due_date": {
+      "type": "date"
+    },
+    "bill_amount": {
+      "type": "decimal"
+    },
+    "bill_payment_receiver": {
+      "type": "string"
+    },
+    "bill_was_paid": {
+      "type": "boolean",
+      "default": false
+    },
+    "category": {
+      "model": "category"
+    },
+    "subcategory": {
+      "model": "subcategory"
+    },
+    "bill_user": {
+      "via": "bill",
+      "plugin": "users-permissions",
+      "model": "user"
+    }
+  }
+}

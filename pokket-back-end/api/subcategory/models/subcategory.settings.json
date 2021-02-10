@@ -1,0 +1,22 @@
+{
+  "kind": "collectionType",
+  "collectionName": "subcategory",
+  "info": {
+    "name": "subcategory",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "subcategory_name": {
+      "type": "string"
+    },
+    "category": {
+      "model": "category",
+      "via": "subcategory"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "kind": "collectionType",
+  "collectionName": "accounts",
+  "info": {
+    "name": "Accounts",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "account_name": {
+      "type": "string"
+    },
+    "account_bank": {
+      "type": "string"
+    },
+    "account_number": {
+      "type": "biginteger"
+    },
+    "account_balance": {
+      "type": "decimal"
+    },
+    "account_user": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "account_type": {
+      "model": "account-type"
+    }
+  }
+}

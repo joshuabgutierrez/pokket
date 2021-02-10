@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "account_types",
+  "info": {
+    "name": "Account Type"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "account_type_name": {
+      "type": "string"
+    }
+  }
+}

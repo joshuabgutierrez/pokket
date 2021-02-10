@@ -1,0 +1,40 @@
+{
+  "kind": "collectionType",
+  "collectionName": "transactions",
+  "info": {
+    "name": "transaction",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "transaction_name": {
+      "type": "string",
+      "required": true
+    },
+    "transaction_receiver": {
+      "type": "string",
+      "required": true
+    },
+    "transaction_amount": {
+      "type": "decimal"
+    },
+    "transaction_user": {
+      "plugin": "users-permissions",
+      "model": "user",
+      "via": "transactions"
+    },
+    "transaction_date": {
+      "type": "date"
+    },
+    "transaction_category": {
+      "model": "category"
+    },
+    "transaction_subcategory": {
+      "model": "subcategory"
+    }
+  }
+}
