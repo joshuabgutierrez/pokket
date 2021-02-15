@@ -69,7 +69,8 @@ module.exports = {
 			transaction_subcategory: {
 				id: entity.transaction_subcategory['id'],
 				category_name: entity.transaction_subcategory['subcategory_name']
-			}
+			},
+			transaction_user: ctx.state.user.id
 		};
 
 		return sanitizeEntity(filteredEntity, { model: strapi.models.transaction });
