@@ -34,9 +34,9 @@
       "model": "subcategory"
     },
     "bill_user": {
-      "via": "bill",
       "plugin": "users-permissions",
-      "model": "user"
+      "model": "user",
+      "via": "bills"
     }
   }
 }

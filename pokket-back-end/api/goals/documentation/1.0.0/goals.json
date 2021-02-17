@@ -589,8 +589,11 @@
                   "type": "string"
                 }
               },
-              "bill": {
-                "type": "string"
+              "bills": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
               },
               "created_by": {
                 "type": "string"
