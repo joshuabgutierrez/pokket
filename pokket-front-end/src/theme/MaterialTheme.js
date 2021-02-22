@@ -9,6 +9,11 @@ const theme = createMuiTheme({
 		fontWeightRegular: 400,
 		fontWeightMedium: 600,
 		fontWeightBold: 700
+	},
+	palette: {
+		secondary: {
+			main: '#fff'
+		}
 	}
 });
 
