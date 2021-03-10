@@ -30,22 +30,22 @@ const StyledChip = styled(Chip)`
     margin-left: 1em;
 `;
 
-function Details() {
+function Details({ type, today, weekly }) {
 	return (
 		<DetailsContainer>
 			<header>
-				<Typography variant="h6">Total Expenses</Typography>
+				<Typography variant="h6">{type}</Typography>
 			</header>
 			<DetailsMain>
 				<section>
-					<Typography variant="h4">$125</Typography>
+					<Typography variant="h4">${today}</Typography>
 					<StyledDiv>
 						<Typography variant="button">Today</Typography>
 						<StyledChip status="down" size="small" icon={<ArrowDown color="#fff" />} label="39" />
 					</StyledDiv>
 				</section>
 				<section>
-					<Typography variant="h4">$940</Typography>
+					<Typography variant="h4">${weekly}</Typography>
 					<StyledDiv>
 						<Typography variant="button">Week</Typography>
 						<StyledChip status="up" size="small" icon={<ArrowUp color="#fff" />} label="104" />

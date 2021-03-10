@@ -24,10 +24,10 @@ function Main() {
 						<Grid item xs={12} sm={6} md={4} lg={4}>
 							<Grid container spacing={6}>
 								<Grid item xs={12} sm={12} md={12} lg={12}>
-									<Details />
+									<Details type="Total Expenses" today={125} weekly={940} />
 								</Grid>
 								<Grid item xs={12} sm={12} md={12} lg={12}>
-									<Details />
+									<Details type="Frequency of Transactions" today={7.1} weekly={51.0} />
 								</Grid>
 							</Grid>
 						</Grid>

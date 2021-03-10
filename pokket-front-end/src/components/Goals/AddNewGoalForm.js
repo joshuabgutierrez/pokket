@@ -88,12 +88,7 @@ function AddNewGoalForm() {
 						<Grid item xs={12} sm={12} md={12} lg={12}>
 							<FormControl component="fieldset">
 								<FormLabel component="legend">How often do you want to add to your goal?</FormLabel>
-								<RadioGroup
-									aria-label="frequency"
-									name="frequency"
-									value="weekly"
-									className={classes.row}
-								>
+								<RadioGroup aria-label="frequency" name="frequency" className={classes.row}>
 									<FormControlLabel value="weekly" control={<Radio />} label="Every week" />
 									<FormControlLabel value="biweekly" control={<Radio />} label="Every 2 weeks" />
 									<FormControlLabel value="triweekly" control={<Radio />} label="Every 3 weeks" />

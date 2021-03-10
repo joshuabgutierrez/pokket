@@ -14,7 +14,7 @@ function SidebarItems() {
 	return (
 		<React.Fragment>
 			<List>
-				<ListItem button key={1} component={Link} to="/">
+				<ListItem button key={1} component={Link} to="/dashboard">
 					<ListItemIcon>
 						<DashboardIcon size={25} />
 					</ListItemIcon>
