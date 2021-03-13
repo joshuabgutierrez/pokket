@@ -25,7 +25,7 @@ function Main() {
 	return (
 		<div>
 			<Grid container spacing={6}>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+				<Grid item xs={12}>
 					<StyledHeader>
 						<Typography variant="h6" color="initial">
 							Your goals here
@@ -35,7 +35,7 @@ function Main() {
 						</Button>
 					</StyledHeader>
 				</Grid>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+				<Grid item xs={12}>
 					<GoalsSection />
 				</Grid>
 			</Grid>

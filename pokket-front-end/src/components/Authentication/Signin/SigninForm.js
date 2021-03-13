@@ -52,10 +52,10 @@ function SigninForm() {
 						</Grid>
 						<Grid item xs={12} sm={12} md={12} lg={12} className={classes.topSpacing}>
 							<section className={classes.sectionStyles}>
-								<Typography variant="subtitle2">Already have an account?</Typography>
+								<Typography variant="subtitle2">Don't have an account?</Typography>
 								<Link to="/register" className={classes.linkStyles}>
 									<Typography variant="subtitle2" color="primary">
-										Sign In
+										Sign Up
 									</Typography>
 								</Link>
 							</section>

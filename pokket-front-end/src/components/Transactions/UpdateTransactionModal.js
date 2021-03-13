@@ -2,12 +2,10 @@ import React from 'react';
 import Modal from '@material-ui/core/Modal';
 import Backdrop from '@material-ui/core/Backdrop';
 import Fade from '@material-ui/core/Fade';
-import AddBudgetForm from './AddBudgetForm';
-import { Grid } from '@material-ui/core';
-import Typography from '@material-ui/core/Typography';
 import useStyles from '../../theme/ModalComponentStyles';
+import UpdateTransactionForm from './UpdateTransactionsForm';
 
-export default function BudgetModal({ handleClose, open }) {
+export default function UpdateTransactionModal({ open, handleClose }) {
 	const classes = useStyles();
 
 	return (
@@ -26,14 +24,7 @@ export default function BudgetModal({ handleClose, open }) {
 			>
 				<Fade in={open}>
 					<div className={classes.paper}>
-						<Grid container>
-							<Grid item xs={12}>
-								<Typography variant="h6">Add a new budget</Typography>
-							</Grid>
-							<Grid item xs={12}>
-								<AddBudgetForm />
-							</Grid>
-						</Grid>
+						<UpdateTransactionForm />
 					</div>
 				</Fade>
 			</Modal>

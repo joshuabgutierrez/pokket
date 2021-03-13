@@ -47,14 +47,14 @@ function GoalDetails() {
 	return (
 		<StyledDetailsContainer>
 			<Grid container alignItems="center" spacing={3}>
-				<Grid item xs={12} sm={12} md={2} lg={2}>
+				<Grid item xs={12}>
 					<Typography variant="subtitle2">Projected Date</Typography>
 					<Typography variant="button">Mar 20 2021</Typography>
 				</Grid>
 				<Divider orientation="vertical" flexItem component="span" className={classes.divider} />
-				<Grid item xs={12} sm={12} md={10} lg={10} className={classes.flex}>
+				<Grid item xs={12} md={10} className={classes.flex}>
 					<Grid container>
-						<Grid item xs={12} sm={12} md={12} lg={12}>
+						<Grid item xs={12}>
 							<StyledHeader>
 								<Typography variant="body1">Buy a house</Typography>
 								<Typography variant="body1">$100 of $20,000</Typography>

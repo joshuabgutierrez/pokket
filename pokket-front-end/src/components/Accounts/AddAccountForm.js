@@ -8,18 +8,18 @@ function AddAccountForm() {
 	return (
 		<React.Fragment>
 			<Grid container>
-				<Grid item lg={12}>
+				<Grid item xs={12}>
 					<Typography variant="h6">Add(Link) your account</Typography>
 				</Grid>
-				<Grid item lg={12}>
+				<Grid item xs={12}>
 					<form action="">
 						<Grid container spacing={2}>
-							<Grid item lg={12}>
+							<Grid item xs={12}>
 								<Grid container spacing={3}>
-									<Grid item lg={6}>
+									<Grid item xs={12} sm={6}>
 										<TextField id="account_name" label="Account Name" value="Hard Work" fullWidth />
 									</Grid>
-									<Grid item lg={6}>
+									<Grid item xs={12} sm={6}>
 										<TextField
 											id="account_bank"
 											label="Account Bank"
@@ -29,9 +29,9 @@ function AddAccountForm() {
 									</Grid>
 								</Grid>
 							</Grid>
-							<Grid item lg={12}>
+							<Grid item xs={12}>
 								<Grid container spacing={3}>
-									<Grid item lg={6}>
+									<Grid item xs={12} sm={6}>
 										<TextField
 											id="account_number"
 											label="Account Number"
@@ -40,7 +40,7 @@ function AddAccountForm() {
 											type="number"
 										/>
 									</Grid>
-									<Grid item lg={6}>
+									<Grid item xs={12} sm={6}>
 										<FormControl fullWidth>
 											<InputLabel id="account_type_label">Account Type</InputLabel>
 											<Select labelId="account_type_label" id="account_type">
@@ -52,9 +52,9 @@ function AddAccountForm() {
 									</Grid>
 								</Grid>
 							</Grid>
-							<Grid item lg={12}>
+							<Grid item xs={12}>
 								<Grid container alignItems="center" spacing={3}>
-									<Grid item lg={6}>
+									<Grid item xs={12} sm={6}>
 										<TextField
 											id="account_balance"
 											label="Account Balance"
@@ -63,7 +63,7 @@ function AddAccountForm() {
 											type="number"
 										/>
 									</Grid>
-									<Grid item lg={6}>
+									<Grid item xs={12} sm={6}>
 										<Button variant="contained" size="small">
 											Add
 										</Button>

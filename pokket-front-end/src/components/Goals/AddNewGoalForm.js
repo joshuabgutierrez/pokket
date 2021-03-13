@@ -33,12 +33,12 @@ function AddNewGoalForm() {
 	const classes = useStyles();
 	return (
 		<Grid container>
-			<Grid item xs={12} sm={12} md={12} lg={12}>
+			<Grid item xs={12}>
 				<form action="">
 					<Grid container spacing={3}>
-						<Grid item xs={12} sm={12} md={12} lg={12}>
+						<Grid item xs={12}>
 							<Grid container spacing={3}>
-								<Grid item xs={12} sm={6} md={6} lg={6}>
+								<Grid item xs={12} sm={6}>
 									<TextField
 										id="goal_name"
 										label="Goal Name"
@@ -47,7 +47,7 @@ function AddNewGoalForm() {
 										type="text"
 									/>
 								</Grid>
-								<Grid item xs={12} sm={6} md={6} lg={6}>
+								<Grid item xs={12} sm={6}>
 									<TextField
 										id="goal_total_amount"
 										label="Total Amount"
@@ -58,9 +58,9 @@ function AddNewGoalForm() {
 								</Grid>
 							</Grid>
 						</Grid>
-						<Grid item xs={12} sm={12} md={12} lg={12}>
+						<Grid item xs={12}>
 							<Grid container spacing={3}>
-								<Grid item xs={12} sm={6} md={6} lg={6}>
+								<Grid item xs={12} sm={6}>
 									<FormControl fullWidth>
 										<InputLabel id="account_label">Choose an account</InputLabel>
 										<Select labelId="account" id="account" value="xxx-xxx-xxx-123">
@@ -70,7 +70,7 @@ function AddNewGoalForm() {
 										</Select>
 									</FormControl>
 								</Grid>
-								<Grid item xs={12} sm={6} md={6} lg={6}>
+								<Grid item xs={12} sm={6}>
 									<MuiPickersUtilsProvider utils={DateFnsUtils}>
 										<KeyboardDatePicker
 											label="Due Date"
@@ -85,7 +85,7 @@ function AddNewGoalForm() {
 								</Grid>
 							</Grid>
 						</Grid>
-						<Grid item xs={12} sm={12} md={12} lg={12}>
+						<Grid item xs={12}>
 							<FormControl component="fieldset">
 								<FormLabel component="legend">How often do you want to add to your goal?</FormLabel>
 								<RadioGroup aria-label="frequency" name="frequency" className={classes.row}>
@@ -96,7 +96,7 @@ function AddNewGoalForm() {
 								</RadioGroup>
 							</FormControl>
 						</Grid>
-						<Grid item xs={12} sm={8} md={8} lg={8}>
+						<Grid item xs={12} sm={8}>
 							<FormControl>
 								<FormLabel component="label" className={classes.margin}>
 									How much do you want to add every week?
@@ -104,7 +104,7 @@ function AddNewGoalForm() {
 								<TextField id="amount" value={2000} type="number" variant="outlined" size="small" />
 							</FormControl>
 						</Grid>
-						<Grid item xs={12} sm={12} md={12} lg={12}>
+						<Grid item xs={12}>
 							<Button variant="contained" size="small">
 								Save
 							</Button>

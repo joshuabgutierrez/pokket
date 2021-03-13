@@ -22,11 +22,11 @@ function BillContainer({ handleOpenPayBillModal }) {
 	return (
 		<StyledBillContainer>
 			<Grid container>
-				<Grid item xs={12} sm={6} md={6} lg={6}>
+				<Grid item xs={12} sm={6}>
 					<Typography variant="subtitle2">Spotify Premium Membership</Typography>
 					<Typography variant="h5">$19.99</Typography>
 				</Grid>
-				<Grid item xs={12} sm={6} md={6} lg={6} className={classes.flex}>
+				<Grid item xs={12} sm={6} className={classes.flex}>
 					<Button size="small" variant="contained" onClick={handleOpenPayBillModal}>
 						Pay Now
 					</Button>

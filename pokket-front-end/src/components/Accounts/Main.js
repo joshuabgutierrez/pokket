@@ -30,26 +30,26 @@ function Main() {
 	return (
 		<div>
 			<Grid container spacing={3}>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+				<Grid item xs={12}>
 					<Grid container>
-						<Grid item xs={6} sm={6} md={6} lg={6}>
+						<Grid item xs={6}>
 							<Typography variant="h5">Your accounts</Typography>
 						</Grid>
-						<Grid item xs={6} sm={6} md={6} lg={6} className={classes.flex}>
+						<Grid item xs={6} className={classes.flex}>
 							<Button size="small" variant="contained" onClick={handleOpen}>
 								Add Account
 							</Button>
 						</Grid>
 					</Grid>
 				</Grid>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+				<Grid item xs={12}>
 					<Grid container justify="center" spacing={1}>
-						<Grid item xs={12} sm={8} md={8} lg={8}>
+						<Grid item xs={12} sm={8}>
 							<AccountsTotal />
 						</Grid>
-						<Grid item xs={12} sm={8} md={8} lg={8}>
+						<Grid item xs={12} sm={8}>
 							<Grid container>
-								<Grid item xs={12} sm={12} md={12} lg={12} className={classes.header}>
+								<Grid item xs={12} className={classes.header}>
 									<Typography variant="h6" align="center">
 										Credit Cards
 									</Typography>
@@ -58,9 +58,9 @@ function Main() {
 							<AccountsDetails />
 							<AccountsDetails />
 						</Grid>
-						<Grid item xs={12} sm={8} md={8} lg={8}>
+						<Grid item xs={12} sm={8}>
 							<Grid container>
-								<Grid item xs={12} sm={12} md={12} lg={12} className={classes.header}>
+								<Grid item xs={12} className={classes.header}>
 									<Typography variant="h6" align="center">
 										Debit Cards
 									</Typography>

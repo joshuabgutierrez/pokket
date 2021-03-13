@@ -49,19 +49,19 @@ function Main() {
 	return (
 		<div>
 			<Grid container justify="center">
-				<Grid item xs={12} sm={10} md={10} lg={10} className={classes.flex}>
+				<Grid item xs={12} sm={10} className={classes.flex}>
 					<Button variant="contained" size="small" onClick={handleOpenAddNewBillModal}>
 						Add New Bill
 					</Button>
 				</Grid>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+				<Grid item xs={12}>
 					<StyledHeader>
 						<Typography variant="h6">Bills Due This Week</Typography>
 						<Typography variant="h4">$563</Typography>
 						<Typography variant="subtitle1">3 Bills</Typography>
 					</StyledHeader>
 				</Grid>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+				<Grid item xs={12}>
 					<BillSection handleOpenPayBillModal={handleOpenPayBillModal} />
 					<BillSection handleOpenPayBillModal={handleOpenPayBillModal} />
 				</Grid>

@@ -81,7 +81,7 @@ const useStyles = makeStyles((theme) => ({
 	}
 }));
 
-export default function TransactionsTable() {
+export default function TransactionsTable({ handleOpen, handleOpenAlert }) {
 	const classes = useStyles();
 	const [ order, setOrder ] = React.useState('asc');
 	const [ orderBy, setOrderBy ] = React.useState('');
@@ -137,7 +137,11 @@ export default function TransactionsTable() {
 	return (
 		<div className={classes.root}>
 			<Paper className={classes.paper}>
-				<TransactionsToolbar numSelected={selected.length} />
+				<TransactionsToolbar
+					numSelected={selected.length}
+					handleOpen={handleOpen}
+					handleOpenAlert={handleOpenAlert}
+				/>
 				<TableContainer>
 					<Table
 						className={classes.table}

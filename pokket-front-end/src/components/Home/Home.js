@@ -10,6 +10,7 @@ import Budget from '../../pages/Budget';
 import Bills from '../../pages/Bills';
 import Goals from '../../pages/Goals';
 import Accounts from '../../pages/Accounts';
+// import SuccessMessage from '../Messages/SuccessMessage';
 
 const drawerWidth = 240;
 
@@ -70,6 +71,7 @@ function Home() {
 					</Route>
 					<Redirect to="/dashboard" />
 				</Switch>
+				{/* <SuccessMessage /> */}
 			</main>
 		</div>
 	);

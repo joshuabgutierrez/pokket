@@ -5,7 +5,7 @@ import GoalDetails from './GoalDetails';
 function GoalsSection() {
 	return (
 		<Grid container justify="center">
-			<Grid item xs={12} sm={12} md={10} lg={10}>
+			<Grid item xs={12} md={10}>
 				<GoalDetails />
 				<GoalDetails />
 				<GoalDetails />

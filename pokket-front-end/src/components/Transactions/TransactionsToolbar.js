@@ -50,12 +50,12 @@ export default function TransactionsToolbar(props) {
 				<React.Fragment>
 					<Tooltip title="Edit">
 						<IconButton aria-label="edit">
-							<EditIcon />
+							<EditIcon onClick={props.handleOpen} />
 						</IconButton>
 					</Tooltip>
 					<Tooltip title="Delete">
 						<IconButton aria-label="delete">
-							<DeleteIcon />
+							<DeleteIcon onClick={props.handleOpenAlert} />
 						</IconButton>
 					</Tooltip>
 				</React.Fragment>

@@ -6,17 +6,17 @@ function PayBillForm() {
 	return (
 		<React.Fragment>
 			<Grid container spacing={2}>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+				<Grid item xs={12}>
 					<Typography variant="h6">Payment Details:</Typography>
 				</Grid>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+				<Grid item xs={12}>
 					<Typography variant="subtitle1">Car Insurance</Typography>
 					<Typography variant="subtitle1">$600</Typography>
 					<Typography variant="subtitle2">Aggresive Insurance</Typography>
 				</Grid>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+				<Grid item xs={12}>
 					<Grid container justify="space-between" alignItems="center" spacing={2}>
-						<Grid item xs={12} sm={12} md={12} lg={4}>
+						<Grid item xs={12} lg={4}>
 							<FormControl fullWidth>
 								<InputLabel id="account">Select an account</InputLabel>
 								<Select labelId="accounts" id="accounts">
@@ -26,7 +26,7 @@ function PayBillForm() {
 								</Select>
 							</FormControl>
 						</Grid>
-						<Grid item xs={12} sm={12} md={12} lg={4}>
+						<Grid item xs={12} lg={4}>
 							<Button variant="contained" size="small">
 								Confirm Payment
 							</Button>

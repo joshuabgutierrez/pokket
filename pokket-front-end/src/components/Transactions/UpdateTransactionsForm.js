@@ -6,12 +6,12 @@ import DateFnsUtils from '@date-io/date-fns';
 import { KeyboardDatePicker, MuiPickersUtilsProvider } from '@material-ui/pickers';
 import Button from '@material-ui/core/Button';
 
-function AddTransactionForm() {
+function UpdateTransactionForm() {
 	return (
 		<React.Fragment>
 			<Grid container spacing={3} zeroMinWidth>
 				<Grid item xs={12}>
-					<Typography variant="h6">Add your new transaction here</Typography>
+					<Typography variant="h6">Update your transaction here</Typography>
 				</Grid>
 				<Grid item xs={12}>
 					<form action="">
@@ -86,7 +86,7 @@ function AddTransactionForm() {
 							</Grid>
 							<Grid item xs={12} sm={6} md={6} lg={6}>
 								<Button variant="contained" size="small">
-									Add Record
+									Update Record
 								</Button>
 							</Grid>
 						</Grid>
@@ -97,4 +97,4 @@ function AddTransactionForm() {
 	);
 }
 
-export default AddTransactionForm;
+export default UpdateTransactionForm;

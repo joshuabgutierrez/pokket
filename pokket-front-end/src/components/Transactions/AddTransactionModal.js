@@ -5,7 +5,7 @@ import Fade from '@material-ui/core/Fade';
 import AddTransactionForm from './AddTransactionForm';
 import useStyles from '../../theme/ModalComponentStyles';
 
-export default function TransactionsModal({ open, handleClose }) {
+export default function AddTransactionModal({ open, handleClose }) {
 	const classes = useStyles();
 
 	return (

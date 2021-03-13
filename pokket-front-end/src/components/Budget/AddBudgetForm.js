@@ -1,12 +1,12 @@
-import { FormControl, Grid, InputLabel, MenuItem, Select } from '@material-ui/core';
+import { Button, FormControl, Grid, InputLabel, MenuItem, Select } from '@material-ui/core';
 import React from 'react';
 import TextField from '@material-ui/core/TextField';
 
 function AddBudgetForm() {
 	return (
 		<form>
-			<Grid container>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+			<Grid container spacing={3}>
+				<Grid item xs={12}>
 					<FormControl fullWidth>
 						<InputLabel id="budget_category">Category</InputLabel>
 						<Select labelId="budget_category" id="budget_category">
@@ -16,7 +16,7 @@ function AddBudgetForm() {
 						</Select>
 					</FormControl>
 				</Grid>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+				<Grid item xs={12}>
 					<FormControl fullWidth>
 						<InputLabel id="budget_subcategory">Subcategory</InputLabel>
 						<Select labelId="budget_subcategory" id="budget_subcategory">
@@ -26,8 +26,13 @@ function AddBudgetForm() {
 						</Select>
 					</FormControl>
 				</Grid>
-				<Grid item xs={12} sm={12} md={12} lg={12}>
+				<Grid item xs={12}>
 					<TextField id="amount_limit" label="amount_limit" fullWidth />
+				</Grid>
+				<Grid item xs={12}>
+					<Button fullWidth size="small" variant="contained" color="primary">
+						Create
+					</Button>
 				</Grid>
 			</Grid>
 		</form>

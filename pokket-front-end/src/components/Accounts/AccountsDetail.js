@@ -24,7 +24,7 @@ function AccountsDetails() {
 
 	return (
 		<Grid container alignItems="center">
-			<Grid item xs={12} sm={12} md={12} lg={12}>
+			<Grid item xs={12}>
 				<Accordion
 					expanded={expanded === 'panel2'}
 					onChange={handleChange('panel2')}
@@ -39,10 +39,10 @@ function AccountsDetails() {
 					</AccordionSummary>
 					<AccordionDetails className={classes.resetPadding}>
 						<Grid container>
-							<Grid item xs={12} sm={12} md={12} lg={12}>
+							<Grid item xs={12}>
 								<Typography variant="subtitle2">Account Number: 1234-1234-1234</Typography>
 							</Grid>
-							<Grid item xs={12} sm={12} md={12} lg={12}>
+							<Grid item xs={12}>
 								<Button size="small" variant="outlined">
 									Edit Account
 								</Button>
