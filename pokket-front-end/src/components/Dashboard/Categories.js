@@ -1,12 +1,8 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import Typography from '@material-ui/core/Typography';
-import FoodDiningIcon from '../../assets/images/FoodDining.png';
-import HealthFitnessIcon from '../../assets/images/HealthFitness.png';
-import ShoppingIcon from '../../assets/images/Shopping.png';
-import AutoTransportIcon from '../../assets/images/AutoTransport.png';
-import TravelIcon from '../../assets/images/Travel.png';
-import BillsUtilitiesIcon from '../../assets/images/BillsUtilities.png';
+import axios from 'axios';
+import { BASE_URL } from '../../api-client';
 
 // Styled-components styling
 const CategoriesContainer = styled.div`
@@ -33,12 +29,40 @@ const StyledArticle = styled.article`
 // !Styled-components styling
 
 function Categories() {
+	const [ categories, setCategories ] = useState([]);
+
+	const fetchCategories = async () => {
+		try {
+			const response = await axios.get('http://localhost:1337/categories');
+			setCategories(response.data);
+		} catch (error) {
+			console.log(error.message);
+		}
+	};
+
+	const showCategories = () => {
+		return categories.map((category) => (
+			<StyledArticle key={category.id}>
+				<StyledSection>
+					<img src={`${BASE_URL}${category.category_icon.url}`} alt={category.category_name} />
+					<Typography variant="body1">{category.category_name}</Typography>
+				</StyledSection>
+				<Typography variant="subtitle2">$940</Typography>
+			</StyledArticle>
+		));
+	};
+
+	useEffect(() => {
+		fetchCategories();
+	}, []);
+
 	return (
 		<CategoriesContainer>
 			<header>
 				<Typography variant="h6">Popular Categories</Typography>
 			</header>
-			<StyledArticle>
+			{showCategories()}
+			{/* <StyledArticle>
 				<StyledSection>
 					<img src={FoodDiningIcon} alt="Food and Dining" />
 					<Typography variant="body1">Food</Typography>
@@ -79,7 +103,7 @@ function Categories() {
 					<Typography variant="body1">Bills & Utilities</Typography>
 				</StyledSection>
 				<Typography variant="subtitle2">$540</Typography>
-			</StyledArticle>
+			</StyledArticle> */}
 		</CategoriesContainer>
 	);
 }

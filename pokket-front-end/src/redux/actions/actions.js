@@ -41,3 +41,9 @@ export const accountsActions = {
 	ACCOUNTS_FAIL: 'accounts_fail',
 	ADD_ACCOUNT: 'add_account'
 };
+
+export const categoriesActions = {
+	CATEGORIES_LOADING: 'categories_loading',
+	CATEGORIES_SUCCESS: 'categories_success',
+	CATEGORIES_FAIL: 'categories_fail'
+};
